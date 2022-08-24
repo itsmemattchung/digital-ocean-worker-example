@@ -4,7 +4,8 @@ import random
 
 def setup_logging():
 
-    log_format = '%(asctime)s - %(process)d:%(thread)d:%(threadName)s - %(name)s - %(levelname)s - %(message)s'
+    #log_format = '%(asctime)s - %(process)d:%(thread)d:%(threadName)s - %(name)s - %(levelname)s - %(message)s'
+    log_format = '%(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(level=logging.INFO,
                         format=log_format,
                         handlers=[logging.StreamHandler()])
