@@ -33,10 +33,15 @@ def main():
         start = time.monotonic()
 
         logger.info("Doing some work")
-        sleep_for = random.randint(MIN_SLEEP_TIME_IN_SECONDS, MAX_SLEEP_TIME_IN_SECONDS)
-        logger.info("Sleeping for %d", sleep_for)
-        time.sleep(sleep_for)
-
+        #sleep_for = random.randint(MIN_SLEEP_TIME_IN_SECONDS, MAX_SLEEP_TIME_IN_SECONDS)
+        work_for = random.randint(MIN_SLEEP_TIME_IN_SECONDS, MAX_SLEEP_TIME_IN_SECONDS)
+        elapsed_worker_loop_time_start = time.monotonic()
+        elapsed_worker_loop_time_end = time.monotonic()
+        while ((elapsed_worker_loop_time_end - elapsed_worker_loop_time_start) < work_for):
+            elapsed_worker_loop_time_end = time.monotonic()
+            pass
+        
+        logger.info("Done working for %d", work_for)
         end = time.monotonic()
 
         proc_runtime_in_secs += end - start
